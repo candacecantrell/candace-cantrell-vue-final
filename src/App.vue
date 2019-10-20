@@ -12,19 +12,15 @@
 </template>
 
 <script>
-    import Header from './components/header.vue';
+import Header from './components/header.vue'
 
-    export default {
-        components: {
-            'app-header': Header,
-            'app-servers': Servers,
-            'app-server-details': ServerDetails,
-            'app-footer': Footer
-        }
-    }
+export default {
+  components: {
+    'app-header': Header
+  }
+}
 </script>
 
 <style scoped>
 
 </style>
-
