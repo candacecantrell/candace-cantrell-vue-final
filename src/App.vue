@@ -1,22 +1,20 @@
 <template>
-    <div class="container">
-        <app-header></app-header>
-        <hr>
-        <div class="row">
-            <app-servers></app-servers>
-            <app-server-details></app-server-details>
-        </div>
-        <hr>
-        <app-footer></app-footer>
-    </div>
+    <v-app>
+    <v-content>
+    <Header></Header>
+    <loginForm></loginForm>
+    </v-content>
+    </v-app>
 </template>
 
 <script>
 import Header from './components/header.vue'
+import loginForm from './components/loginForm.vue'
 
 export default {
   components: {
-    'app-header': Header
+    Header,
+    loginForm
   }
 }
 </script>
