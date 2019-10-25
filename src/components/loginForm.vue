@@ -1,8 +1,10 @@
 <template>
-<v-card class="d-flex justify-sm-center">
- <v-col
-          cols="12"
-        >
+<div>
+<v-container class="pa-6">
+<v-card class="d-flex flex-column sm-10 md-6 lg-6 justify-space-around pa-6 teal lighten-4"
+max-width="500"
+>
+<h1>APP TITLE</h1>
           <v-text-field
             v-model="firstname"
             :rules="nameRules"
@@ -24,10 +26,21 @@
             label="Email"
             required
           ></v-text-field>
-        </v-col>
+          <div class="mx-auto">
+          <v-btn class="teal lighten-5">Sign In</v-btn>
+          </div>
         </v-card>
+        </v-container>
+        </div>
 </template>
 <style scoped>
+.backColor {
+  position: fixed;
+  margin-top: 0;
+  height:100%;
+  width: 100%;
+
+}
 </style>
 <script>
 </script>
