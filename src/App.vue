@@ -1,6 +1,7 @@
 <template>
     <v-app>
     <v-content>
+    <router-view></router-view>
     <Header></Header>
     <loginForm></loginForm>
     </v-content>
