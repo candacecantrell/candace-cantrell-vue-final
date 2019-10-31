@@ -1,10 +1,11 @@
 <template>
-<div>
+<div class="centerApp">
 <v-container class="pa-6">
-<v-card class="d-flex flex-column sm-10 md-6 lg-6 justify-space-around pa-6 teal lighten-4"
+<v-card class="d-flex flex-column sm-10 md-6 lg-6 justify-space-around teal lighten-4"
 max-width="500"
 >
 <h1>APP TITLE</h1>
+<v-form>
           <v-text-field
             v-model="firstname"
             :rules="nameRules"
@@ -29,6 +30,7 @@ max-width="500"
           <div class="mx-auto">
           <v-btn class="teal lighten-5">Sign In</v-btn>
           </div>
+          </v-form>
         </v-card>
         </v-container>
         </div>
@@ -43,4 +45,14 @@ max-width="500"
 }
 </style>
 <script>
+export default {
+  data: () => ({
+    valid: false,
+    firstname: '',
+    nameRules: [
+      v => !!v || 'Name is required',
+      v => v.length <= 10 || 'Name must be less than 10 characters'
+    ]
+  })
+}
 </script>
