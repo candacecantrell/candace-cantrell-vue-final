@@ -1,7 +1,7 @@
 <template>
 <div class="centerApp">
-<v-container class="pa-6">
-<v-card class="d-flex flex-column sm-10 md-6 lg-6 justify-space-around teal lighten-4"
+<v-container>
+<v-card class="teal lighten-4"
 max-width="500"
 >
 <h1>APP TITLE</h1>
@@ -22,7 +22,7 @@ max-width="500"
           ></v-text-field>
             <v-text-field
             v-model="firstname"
-            :rules="nameRules"
+            :rules="mailRules"
             :counter="10"
             label="Email"
             required
@@ -36,22 +36,20 @@ max-width="500"
         </div>
 </template>
 <style scoped>
-.backColor {
-  position: fixed;
-  margin-top: 0;
-  height:100%;
-  width: 100%;
-
-}
 </style>
 <script>
 export default {
   data: () => ({
     valid: false,
     firstname: '',
+    lastname: '',
+    email: '',
     nameRules: [
       v => !!v || 'Name is required',
       v => v.length <= 10 || 'Name must be less than 10 characters'
+    ],
+    mailRules: [
+      v => !!v || 'Email is required'
     ]
   })
 }

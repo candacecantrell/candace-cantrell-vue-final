@@ -1,6 +1,6 @@
-import User from './components/user/user.vue'
-import Home from './components/home.vue'
+// import User from './components/user/user.vue'
+import loginForm from './components/loginForm.vue'
 export const routes = [
-    { path: '/user', component: User }
-    { path: '', component: Home }//empty path sets root route
+  // { path: '/user', component: User }
+  { path: '', component: loginForm }// empty path sets root route
 ]

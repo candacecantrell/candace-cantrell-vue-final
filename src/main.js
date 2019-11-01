@@ -13,7 +13,6 @@ const router = new VueRouter({
 })
 
 new Vue({
-  el: '#app',
   router,
   vuetify,
   render: h => h(App)
