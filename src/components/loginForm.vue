@@ -1,7 +1,7 @@
 <template>
 <div class="centerApp">
 <v-container>
-<v-card class="teal lighten-4"
+<v-card class="teal lighten-4 pa-3"
 max-width="500"
 >
 <h1>APP TITLE</h1>
@@ -14,16 +14,15 @@ max-width="500"
             required
           ></v-text-field>
             <v-text-field
-            v-model="firstname"
+            v-model="lastname"
             :rules="nameRules"
             :counter="10"
             label="Last Name"
             required
           ></v-text-field>
             <v-text-field
-            v-model="firstname"
+            v-model="email"
             :rules="mailRules"
-            :counter="10"
             label="Email"
             required
           ></v-text-field>
@@ -43,13 +42,9 @@ export default {
     valid: false,
     firstname: '',
     lastname: '',
-    email: '',
     nameRules: [
       v => !!v || 'Name is required',
       v => v.length <= 10 || 'Name must be less than 10 characters'
-    ],
-    mailRules: [
-      v => !!v || 'Email is required'
     ]
   })
 }

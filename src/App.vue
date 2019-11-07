@@ -4,6 +4,7 @@
     <Header></Header>
     <div class="appContent">
     <router-view></router-view>
+    <Footer></Footer>
     </div>
     </v-content>
     </v-app>
@@ -11,11 +12,13 @@
 
 <script>
 import Header from './components/header.vue'
+import Footer from './components/footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   },
   created: function () {
     // `this` points to the vm instance
