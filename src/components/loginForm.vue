@@ -5,19 +5,19 @@
 max-width="500"
 >
 <h1>APP TITLE</h1>
-<v-form>
+<v-form @submit.prevent="onSubmit">
           <v-text-field
-            v-model="firstname"
+            v-model="username"
             :rules="nameRules"
-            :counter="10"
-            label="First name"
+            :counter="15"
+            label="Username"
             required
           ></v-text-field>
             <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
+            v-model="password"
+            :rules="passRules"
             :counter="10"
-            label="Last Name"
+            label="Password"
             required
           ></v-text-field>
             <v-text-field
@@ -27,7 +27,8 @@ max-width="500"
             required
           ></v-text-field>
           <div class="mx-auto">
-          <v-btn class="teal lighten-5">Sign In</v-btn>
+          <v-btn class="teal lighten-5"
+          @click="onSubmit" >Sign In</v-btn>
           </div>
           </v-form>
         </v-card>
@@ -38,14 +39,38 @@ max-width="500"
 </style>
 <script>
 export default {
-  data: () => ({
-    valid: false,
-    firstname: '',
-    lastname: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => v.length <= 10 || 'Name must be less than 10 characters'
-    ]
-  })
+  data () {
+    return {
+      valid: false,
+      username: '',
+      password: '',
+      email: '',
+      nameRules: [
+        v => !!v || 'Username is required',
+        v => v.length >= 8 || 'Username must be at least 8 characters'
+      ],
+      passRules: [
+        v => !!v || 'Password is required'
+      ],
+      mailRules: [
+        v => !!v || 'Email is required'
+      ]
+    }
+  },
+  methods: {
+    onSubmit () {
+      const formData = {
+        username: this.username,
+        password: this.password,
+        email: this.email
+      }
+      console.log(formData)
+      this.$store.dispatch('userLoggedIn', {
+        username: this.username,
+        password: this.password,
+        email: this.email
+      })
+    }
+  }
 }
 </script>

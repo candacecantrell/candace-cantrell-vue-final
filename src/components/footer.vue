@@ -3,13 +3,12 @@
     <v-footer
       v-bind="localAttrs"
       :padless="padless"
-      :variant="fixed"
     >
       <v-card
         flat
         tile
         width="100%"
-        class="red lighten-1 text-center"
+        class="purple lighten-3 text-center"
       >
         <v-card-text>
           <v-btn
@@ -25,7 +24,7 @@
         <v-divider></v-divider>
 
         <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>Candace Cantrell</strong>
         </v-card-text>
       </v-card>
     </v-footer>
