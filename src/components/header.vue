@@ -33,7 +33,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>{{ $store.username }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -67,7 +67,8 @@ export default {
       drawer: null,
       items: [
         { title: 'Home', icon: 'Log In' },
-        { title: 'About', icon: 'Application' }
+        { title: 'About', icon: 'Application' },
+        { title: 'Your Challenges' }
       ]
     }
   }

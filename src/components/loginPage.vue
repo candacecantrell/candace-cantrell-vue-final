@@ -25,6 +25,7 @@
     <div class="send">
       <p v-html="sendActivity" class="sendAct">Your Challenge: {{ this.activities }}</p>
       </div>
+       <v-btn class="ma-2" outlined color="indigo" @click="toList" >Accept This Challenge</v-btn>
   </div>
   </v-row>
 </template>
@@ -83,8 +84,7 @@ export default {
             console.log(objectsToArray)
             // console.log(response.data.activity)
             this.sendActivity = response.data.activity.toString()
-            this.activities = response.data.activity.toString()
-            console.log(this.sendActivity)
+            this.activities = response.data.activity.toString().push
           })
           .catch(error => console.error(error))
       } else if (item.id === 6) {
@@ -173,113 +173,11 @@ export default {
           .catch(error => console.error(error))
       }
     },
-    getEd () {
-      axios.get('https://www.boredapi.com/api/activity?type=education')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          // console.log(response.data.activity)
-          this.sendActivity = response.data.activity.toString()
-          this.activities = response.data.activity.toString()
-          console.log(this.sendActivity)
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log()
-        })
-    },
-    getSoc () {
-      axios.get('https://www.boredapi.com/api/activity?type=social')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
-    },
-    getRel () {
-      axios.get('https://www.boredapi.com/api/activity?type=relaxation')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
-    },
-    getCook () {
-      axios.get('https://www.boredapi.com/api/activity?type=cooking')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
-    },
-    getMus () {
-      axios.get('https://www.boredapi.com/api/activity?type=music')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
-    },
-    getBusy () {
-      axios.get('https://www.boredapi.com/api/activity?type=busywork')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
-    },
-    getDiy () {
-      axios.get('https://www.boredapi.com/api/activity?type=diy')
-        .then(response => {
-          const allActivitiesObj = response
-          const objectsToArray = Object.entries(allActivitiesObj).map(e =>
-            Object.assign(e[1], { key: e[0] })
-          )
-          console.log(objectsToArray)
-          this.activities = objectsToArray
-        })
-        .catch(error => console.error(error))
-        .finally(() => {
-          console.log(this.activities)
-        })
+    toList () {
+      console.log(this.activities)
+      this.$store.dispatch('addToList', {
+        sendActivity: this.activities
+      })
     }
   }
 }
