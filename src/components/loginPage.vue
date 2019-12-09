@@ -197,6 +197,9 @@ export default {
   },
   methods: {
     getDrama () {
+      if (window.location.protocol !== 'https:') {
+        location.href = location.href.replace('http://', 'https://')
+      }
       axios.get('http://api.tvmaze.com/singlesearch/shows?q=girls')
         .then(response => {
           const allActivitiesObj = response
@@ -209,10 +212,6 @@ export default {
           const newSummary = response.data.summary
           this.showSummary = newSummary.replace(/<[^>]*>?/gm, '')
         })
-      if (window.location.protocol !== 'https:') {
-        window.location.protocol = 'https:'
-        window.location.reload()
-      }
       axios.get('http://api.tvmaze.com/singlesearch/shows?q=vikings')
         .then(response => {
           const allActivitiesObj = response
