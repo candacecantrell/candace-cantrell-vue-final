@@ -18,7 +18,7 @@
           >
           <v-icon class="burgerIcon" color="white">fas fa-hamburger</v-icon>
         </v-btn>
-        <v-toolbar-title>The Boredom Challenge</v-toolbar-title>
+        <v-toolbar-title>TV Index</v-toolbar-title>
       </v-row>
     </v-container>
 </v-toolbar>

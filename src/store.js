@@ -15,8 +15,8 @@ export default new Vuex.Store({
       email: '',
       password: ''
     },
-    challenges: {
-      sendActivity: []
+    showList: {
+      sendShow: ''
     }
   },
   getters: {
@@ -24,15 +24,15 @@ export default new Vuex.Store({
       return state.user
     },
     sendChallenges (state) {
-      return state.challenges.sendActivity
+      return state.showList.sendShow
     }
   },
   mutations: {
     storeUser (state, user) {
       return (state.user = user)
     },
-    storeChallenge (state, challenges) {
-      return (state.challenges = challenges)
+    storeChallenge (state, sendShow) {
+      return (state.sendShow = sendShow)
     }
   },
   actions: {
@@ -42,8 +42,8 @@ export default new Vuex.Store({
       // routes.push('/loginPage')
       router.push({ name: 'loginPage' })
     },
-    addToList ({ commit }, challenges) {
-      commit('storeChallenge', challenges)
+    addToList ({ commit }, sendShow) {
+      commit('storeShowList', sendShow)
       router.push({ name: 'listPage' })
     }
   }

@@ -12,7 +12,9 @@ Vue.use(Router)
   { path: '/loginPage', name: 'loginPage', component: loginPage }
 ] */
 export default new Router({
+  mode: 'history',
   routes: [
+    // { path: 'Access-Control-Allow-Origin': '*' },
     // { path: '/user', component: User }
     { path: '', name: 'loginForm', component: loginForm }, // empty path sets root route
     { path: '/loginPage', name: 'loginPage', component: loginPage },
