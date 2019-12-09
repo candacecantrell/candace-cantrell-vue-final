@@ -6,13 +6,7 @@
             color="#385F73"
             dark
           >
-            <v-card-title class="headline">Add New Shows</v-card-title>
-
-            <v-card-subtitle>Listen to your favorite artists and albums whenever and wherever, online and offline.</v-card-subtitle>
-
-            <v-card-actions>
-              <v-btn text>Listen Now</v-btn>
-            </v-card-actions>
+            <v-card-title class="headline">Save New Shows</v-card-title>
           </v-card>
         </v-col>
 
@@ -296,27 +290,27 @@ export default {
     },
     save2 () {
       this.$store.dispatch('storeToList', {
-        sendShow: this.newShow2
+        sendShow: this.title2
       })
     },
     save3 () {
       this.$store.dispatch('storeToList', {
-        sendShow: this.newShow3
+        sendShow: this.title3
       })
     },
     save4 () {
       this.$store.dispatch('storeToList', {
-        sendShow: this.newShow4
+        sendShow: this.title4
       })
     },
     save5 () {
       this.$store.dispatch('storeToList', {
-        sendShow: this.newShow5
+        sendShow: this.title5
       })
     },
     save6 () {
       this.$store.dispatch('storeToList', {
-        sendShow: this.newShow6
+        sendShow: this.title6
       })
     }
   },

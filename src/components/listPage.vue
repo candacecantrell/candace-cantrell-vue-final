@@ -43,9 +43,6 @@ export default {
     return {
       newShow: '',
       newShows: this.$store.getters.saveList.sendShow
-      // items: [
-      // { title: '' }
-      // ]
     }
   },
   computed: {
