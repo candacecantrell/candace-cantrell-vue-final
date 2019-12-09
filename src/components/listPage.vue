@@ -1,34 +1,68 @@
 <template>
- <v-row align="center">
-    <v-col class="text-center" cols="12" sm="4">
-    <div class="displayNew">
-      <p>{{ this.newChallenges }}</p>
-  </div>
-      <div class="my-2">
-        <v-btn small
-        @click="startChallenge"
-        >Start This Challenge</v-btn>
-      </div>
-      <div class="my-2">
-        <v-btn small>Challenge Completed!</v-btn>
-      </div>
-       </v-col>
-  </v-row>
+  <v-container>
+      <v-row dense>
+        <v-col cols="12">
+          <v-card
+            color="#385F73"
+            dark
+          >
+            <v-card-title class="headline">Saved List</v-card-title>
+          </v-card>
+        </v-col>
+
+        <v-col
+          cols="12"
+        >
+          <v-card
+          >
+            <div class="d-flex flex-no-wrap justify-space-between">
+              <div>
+                <v-card-title
+                  class="headline"
+                >{{ this.newShows }}</v-card-title>
+
+                <v-card-subtitle></v-card-subtitle>
+              </div>
+
+              <v-avatar
+                class="ma-3"
+                size="125"
+                tile
+              >
+                <v-img></v-img>
+              </v-avatar>
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
 </template>
 <script>
 export default {
   data () {
     return {
-      newChallenges: this.$store.getters.sendChallenges
+      newShow: '',
+      newShows: this.$store.getters.saveList.sendShow
+      // items: [
+      // { title: '' }
+      // ]
     }
   },
   computed: {
-    challenges () {
-      const challenge = this.$store.getters.sendChallenges
-      return challenge
+    showWatchList () {
+      const savedShows = this.$store.getters.saveList
+      return savedShows
     }
   },
   methods: {
+    displayNewShows () {
+      console.log(this.newShows)
+      this.items.title = this.newShow
+      console.log(this.newShow)
+    }
+  },
+  created: function () {
+    this.displayNewShows()
   }
 }
 </script>
