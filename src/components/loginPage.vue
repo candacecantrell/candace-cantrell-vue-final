@@ -6,7 +6,7 @@
             color="#385F73"
             dark
           >
-            <v-card-title class="headline">Save New Shows</v-card-title>
+            <v-card-title class="headline">Find New Shows</v-card-title>
           </v-card>
         </v-col>
 

@@ -47,7 +47,7 @@
           link
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon @click='menuRoute()'>{{ item.icon }}</v-icon>
             <router-link to="/"></router-link>
           </v-list-item-icon>
 
@@ -66,10 +66,16 @@ export default {
     return {
       drawer: null,
       items: [
-        { icon: 'Home' },
-        { icon: 'All Shows' },
-        { icon: 'Saved Shows' }
+        { icon: 'Home', path: '/' },
+        { icon: 'All Shows', path: '/loginPage' },
+        { icon: 'Saved Shows', path: '/listPage' }
       ]
+    }
+  },
+  methods: {
+    menuRoute () {
+      const menuItem = this.items.selectedItem.path
+      return menuItem
     }
   }
 }
