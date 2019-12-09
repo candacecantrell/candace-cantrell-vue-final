@@ -210,7 +210,7 @@ export default {
           const newSummary = response.data.summary
           this.showSummary = newSummary.replace(/<[^>]*>?/gm, '')
         })
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=vikings')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=vikings')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
@@ -224,7 +224,7 @@ export default {
           this.showSummary2 = newSummary.replace(/<[^>]*>?/gm, '')
           // console.log(this.newShow2)
         })
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=mr-robot')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=mr-robot')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
@@ -238,7 +238,7 @@ export default {
           this.showSummary3 = newSummary.replace(/<[^>]*>?/gm, '')
           // console.log(this.newShow3)
         })
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=the-blacklist')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=the-blacklist')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
@@ -252,7 +252,7 @@ export default {
           this.showSummary4 = newSummary.replace(/<[^>]*>?/gm, '')
           // console.log(this.newShow4)
         })
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=watchmen')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=watchmen')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
@@ -266,7 +266,7 @@ export default {
           this.showSummary5 = newSummary.replace(/<[^>]*>?/gm, '')
           // console.log(this.newShow5)
         })
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=batwoman')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=batwoman')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
