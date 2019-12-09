@@ -196,10 +196,8 @@ export default {
     }
   },
   methods: {
+    headers: { 'Access-Control-Allow-Origin': '*' },
     getDrama () {
-      if (window.location.protocol !== 'http:') {
-        location.href = location.href.replace('https://', 'http://')
-      }
       axios.get('http://api.tvmaze.com/singlesearch/shows?q=girls')
         .then(response => {
           const allActivitiesObj = response
