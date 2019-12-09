@@ -203,14 +203,16 @@ export default {
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
             Object.assign(e[1], { key: e[0] })
           )
-          // console.log(objectsToArray)
           this.newShow = objectsToArray
           this.title = response.data.name
           this.showGenre = response.data.genres
           const newSummary = response.data.summary
           this.showSummary = newSummary.replace(/<[^>]*>?/gm, '')
-          // console.log(this.newShow)
         })
+      if (window.location.protocol !== 'https:') {
+        window.location.protocol = 'https:'
+        window.location.reload()
+      }
       axios.get('http://api.tvmaze.com/singlesearch/shows?q=vikings')
         .then(response => {
           const allActivitiesObj = response
