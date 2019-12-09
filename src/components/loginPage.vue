@@ -197,8 +197,8 @@ export default {
   },
   methods: {
     getDrama () {
-      if (window.location.protocol !== 'https:') {
-        location.href = location.href.replace('http://', 'https://')
+      if (window.location.protocol !== 'http:') {
+        location.href = location.href.replace('https://', 'http://')
       }
       axios.get('http://api.tvmaze.com/singlesearch/shows?q=girls')
         .then(response => {
