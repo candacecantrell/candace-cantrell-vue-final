@@ -198,7 +198,7 @@ export default {
   methods: {
     headers: { 'Access-Control-Allow-Origin': '*' },
     getDrama () {
-      axios.get('http://api.tvmaze.com/singlesearch/shows?q=girls')
+      axios.get('https://api.tvmaze.com/singlesearch/shows?q=girls')
         .then(response => {
           const allActivitiesObj = response
           const objectsToArray = Object.entries(allActivitiesObj).map(e =>
